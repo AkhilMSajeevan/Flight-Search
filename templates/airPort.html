@@ -1,0 +1,21 @@
+<ul>
+    {% for node in nodes %}
+        <li>
+            {{ node.airport.airport_code }}
+            {% if node.left or node.right %}
+                <ul>
+                    {% if node.left %}
+                        <li>Left:
+                            {% include "tree_node.html" with nodes=node.left %}
+                        </li>
+                    {% endif %}
+                    {% if node.right %}
+                        <li>Right:
+                            {% include "tree_node.html" with nodes=node.right %}
+                        </li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Airport Route</title>
+</head>
+<body>
+    <h2>Add Airport Route</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Parent Airport:</label><br>
+        {{ form.parent_airport }}<br><br>
+
+        <label>Airport Code:</label><br>
+        {{ form.airport_code }}<br><br>
+
+        <label>Position (Left/Right):</label><br>
+        {{ form.position }}<br><br>
+
+        <label>Duration:</label><br>
+        {{ form.duration }}<br><br>
+
+        <button type="submit">Add Route</button>
+    </form>
+
+    <br>
+    <a href="/dashboard/">Go to Dashboard</a>
+</body>
+</html>
